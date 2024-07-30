@@ -22,10 +22,9 @@ return new class extends Migration
             $table->decimal('tax', 4, 2);
             $table->decimal('total', 11, 2);
             $table->string('status', 20);
-            $table->timestamps();
-
             $table->foreign('provider_id')->references('id')->on('people');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
