@@ -20,9 +20,8 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('description', 256)->nullable();
             $table->boolean('state')->default(1);
-            $table->timestamps();
-
             $table->foreign('idCategory')->references('id')->on('categories')->onDelete('cascade');
+            $table->timestamps();  
         });
     }
 

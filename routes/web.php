@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\CatecoryController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Income_detailController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\PersonController;
@@ -25,11 +25,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('/dashboard/article',ArticleController::class);
-    Route::resource('/dashboard/category',CatecoryController::class);
-    //Route::resource('/dashboard/article',Income_detailController::class);
-    //Route::resource('/dashboard/article',IncomeController::class);
-    Route::resource('/dashboard/person',PersonController::class);
+    //Rutas de nuestra app
+    //Route::resource('/dashboard/post',PostController::class);
+    Route::resource('dashboard/article',ArticleController::class);
+    Route::resource('dashboard/category',CategoryController::class);
+    Route::resource('dashboard/person',PersonController::class);
+    Route::resource('dashboard/income',IncomeController::class);
     //Route::resource('/dashboard/article',Sale_detailController::class);
     //Route::resource('/dashboard/article',SaleController::class);
 });
