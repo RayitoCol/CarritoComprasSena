@@ -19,9 +19,15 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="name">Nombre</label>
+            <label class="col-sm-2 col-form-label" for="first_name">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="last_name">Apellido</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
             </div>
         </div>
         <div class="form-group row">

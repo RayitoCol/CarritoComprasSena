@@ -10,7 +10,8 @@ class Person extends Model
     use HasFactory;
     protected $fillable = [
         'type',
-        'name',
+        'first_name',
+        'last_name',
         'document_type',
         'document_number',
         'address',

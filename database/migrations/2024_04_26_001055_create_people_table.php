@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('person', function (Blueprint $table) {
             $table->id();
             $table->enum('type',20)->notNullable();
-            $table->string('name',100)->notNullable();
+            $table->string('first_name',100)->notNullable();
+            $table->string('last_name',100)->notNullable();
             $table->enum('document_type',20)->Nullable();
             $table->string('document_number',20)->Nullable();
             $table->string('address',100)->Nullable();
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('person');
     }
 };

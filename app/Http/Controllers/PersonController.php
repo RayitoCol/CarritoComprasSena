@@ -22,7 +22,9 @@ class PersonController extends Controller
      */
     public function create()
     {
-        return view('dashboard.person.create');
+        $providers=person::where('type','Proveedor');
+        $users=Auth::user();
+        return view('dashboard.person.create',['provider'=>$providers,'user'=>$users]);
     }
 
     /**
@@ -32,7 +34,8 @@ class PersonController extends Controller
     {
         $person= new Person();
         $person->type=$request->input('type');
-        $person->name=$request->input('name');
+        $person->first_name=$request->input('first_name');
+        $person->last_name=$request->input('last_name');
         $person->document_type=$request->input('document_type');
         $person->document_number=$request->input('document_number');
         $person->address=$request->input('address');
@@ -66,7 +69,8 @@ class PersonController extends Controller
     {
         $person=Person::find($id);
         $person->type=$request->input('type');
-        $person->name=$request->input('name');
+        $person->first_name=$request->input('first_name');
+        $person->last_name=$request->input('last_name');
         $person->document_type=$request->input('document_type');
         $person->document_number=$request->input('document_number');
         $person->address=$request->input('address');
@@ -81,6 +85,8 @@ class PersonController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $person=Person::find($id);
+        $person->Delete();
+        return redirect("dashboard/person");
     }
 }

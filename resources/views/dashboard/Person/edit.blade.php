@@ -20,9 +20,15 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="name">Nombre</label>
+            <label class="col-sm-2 col-form-label" for="first_name">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" name="name" value="{{$person->name}}" required >
+                <input type="text" class="form-control" id="first_name" name="first_name" value="{{$person->first_name}}" required >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="last_name">Apellido</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="last_name" name="last_name" value="{{$person->last_name}}" required >
             </div>
         </div>
         <div class="form-group row">
@@ -64,7 +70,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        <a href="{{ route('person.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{url('dashboard/person')}}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

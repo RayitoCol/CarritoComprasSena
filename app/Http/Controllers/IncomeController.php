@@ -15,7 +15,7 @@ class IncomeController extends Controller
     public function index()
     {
         $income=Income::all();
-        return view('dashboard.income,index',['income'=>$income]);
+        return view('dashboard.income.index',['income'=>$income]);
     }
 
     /**
