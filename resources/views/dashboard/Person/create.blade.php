@@ -63,7 +63,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{ route('person.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{url('dashboard/person')}}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

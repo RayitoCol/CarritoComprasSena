@@ -17,10 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('article_id');
             $table->integer('quantity');
             $table->decimal('price', 11, 2);
-            $table->timestamps();
-
             $table->foreign('income_id')->references('id')->on('incomes')->onDelete('cascade');
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -32,3 +31,6 @@ return new class extends Migration
         Schema::dropIfExists('income_details');
     }
 };
+
+
+           

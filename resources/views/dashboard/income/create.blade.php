@@ -63,9 +63,12 @@
         </div>
         <br>
         <div class="form-group row">
-            <label for="status" class="col-sm-2 col-form-label">Estatus</label>
+            <label for="state">Estado</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="status" id="status" placeholder="Ingresa el estatus">
+                <select class="form-control" name="state" id="state">
+                    <option value="1">Cancelado</option>
+                    <option value="0">Pendiente</option>
+                </select>
             </div>
         </div>
         <div class="form-group row">

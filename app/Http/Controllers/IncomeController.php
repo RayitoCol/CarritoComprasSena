@@ -15,7 +15,7 @@ class IncomeController extends Controller
     public function index()
     {
         $income=Income::all();
-        return view('dashboard.income,index', ['income'=>$income]);
+        return view('dashboard.income,index',['income'=>$income]);
     }
 
     /**
@@ -40,7 +40,7 @@ class IncomeController extends Controller
         $income->date=$request->input('date');
         $income->tax=$request->input('tax');
         $income->total=$request->input('total');
-        $income->status=$request->input('status');
+        $income->status=$request->input('state');
         $income->save();
         return view("dashboard.income.message",['msg'=>"Ingreso agregado satisfactoriamente"]);
     }
@@ -76,7 +76,7 @@ class IncomeController extends Controller
         $income->date=$request->input('date');
         $income->tax=$request->input('tax');
         $income->total=$request->input('total');
-        $income->status=$request->input('status');
+        $income->status=$request->input('state');
         $income->save();
         return view("dashboard.income.message",['msg'=>"Ingreso actualizado satisfactoriamente"]);
     }
