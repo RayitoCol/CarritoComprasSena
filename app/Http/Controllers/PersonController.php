@@ -23,8 +23,8 @@ class PersonController extends Controller
     public function create()
     {
         $providers=person::where('type','Proveedor');
-        $users=Auth::user();
-        return view('dashboard.person.create',['provider'=>$providers,'user'=>$users]);
+       
+        return view('dashboard.person.create',['provider'=>$providers]);
     }
 
     /**
@@ -32,6 +32,18 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
+        // Validación de los datos del formulario
+        $validated = $request->validate([
+            'type' => 'required|string',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'document_type' => 'required|string',
+            'document_number' => 'required|string',
+            'address' => 'required|string',  // Validación de 'address'
+            'phone' => 'required|string',
+            'email' => 'required|email',  // Validación de correo electrónico
+        ]);
+        
         $person= new Person();
         $person->type=$request->input('type');
         $person->first_name=$request->input('first_name');
@@ -42,7 +54,9 @@ class PersonController extends Controller
         $person->phone=$request->input('phone');
         $person->email=$request->input('email');
         $person->save();
-        return view("dashboard.person.message",['msg'=>"¡Persona creada exitosamente!"]);
+
+        return redirect()->route('person.index')->with('success', '¡Persona creada exitosamente!');
+
     }
 
     /**
