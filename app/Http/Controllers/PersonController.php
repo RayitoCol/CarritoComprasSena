@@ -30,6 +30,7 @@ class PersonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(Request $request)
     {
         // Validación de los datos del formulario
